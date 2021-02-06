@@ -16,7 +16,7 @@ settings:
 
 monitors:
   - id: trustmedis-his # unique identifier
-    name: hisx.trustmedis.com
+    name: 'hisx.trustmedis.com'
     description: 'Trustmedis HIS Server' # default=empty
     url: 'https://hisx.trustmedis.com/' # URL to fetch
     method: GET # default=GET
@@ -24,8 +24,15 @@ monitors:
     followRedirect: false # should fetch follow redirects, default=false
 
   - id: bpjs-rest
-    name: 
+    name: '*.bpjs-kesehatan.go.id'
     description: 'BPJS Web Service'
     url: 'https://new-api.bpjs-kesehatan.go.id:8080/new-vclaim-rest/'
+    method: GET
+    expectStatus: 200
+
+  - id: trustmedis-his-15
+    name: '*.trustmedis.id'
+    description: 'Trustmedis HIS Server'
+    url: 'https://ping.trustmedis.id'
     method: GET
     expectStatus: 200
